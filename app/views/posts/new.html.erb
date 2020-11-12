@@ -1,0 +1,14 @@
+<div class='container d-flex justify-content-center align-items-center flex-column'>
+  <h1 class='display-1 pb-4'>Post a new secret 🙊</h1>
+  <%= simple_form_for(@post) do |f| %>
+    <div class="form-group">
+      <%= f.input :title, label: 'Enter your secret title', label_html: { class: 'label' }, placeholder: 'Enter the title please...', autofocus: true, class: 'form-control' %>
+      <small class="form-text text-muted">We'll never share your secret with none members.</small>
+    </div>
+    <div class="form-group">
+      <%= f.label 'Enter your secret here'%>
+      <%= f.text_area :body, placeholder: 'Once upon a day....', class: 'form-control'%>
+    </div>
+    <%= f.button :submit, class: 'btn btn-primary'%>
+  <% end %>
+</div>

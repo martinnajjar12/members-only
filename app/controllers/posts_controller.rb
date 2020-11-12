@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action: authenticate_user!, except: [:index]
+  # before_action :authenticate_user!, except: [:index]
   
   def index
     @posts = Post.all
@@ -15,11 +15,12 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       render 'new'
+    end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:posts).permit(:title, :body)
   end
 end
