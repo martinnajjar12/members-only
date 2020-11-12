@@ -1,30 +1,49 @@
-
 # Members only
 
-- In this project we have:
-  - Used Devise to authenticate users
-  - Implemented sign in, sign out and sign up features
-  - Used Bootstrap to layout the pages
- 
+![screenshot](./app/assets/images/app_screen.png)
+
+> In this project we have:
+>
+> - Used Devise to authenticate users
+> - Implemented sign in, sign out and sign up features
+> - Used Bootstrap to layout the pages
 
 ## Built with
 
 - Rails 6.0.3.4
-- Ruby  2.7.1
+- Ruby 2.7.1
 - Bootstrap
 - Devise
 
-
 ## Getting Started
 
-- Clone or download the repository git@github.com:martinnajjar12/members-only.git
+To get a local copy up and running follow these simple example steps.
 
-- For Linux Users (Ubuntu):
-    - In the folder that contains the cloned repository,right-click.
-    - Click in the option Open in Terminal (this will open the Terminal)
-    - In Terminal run 'Bundle install'
-    - Run 'rails db:migrate'
+### Prerequisites
 
+You should have [Ruby 2.7.1](https://www.ruby-lang.org/en/documentation/installation/) installed on your machine along with [Rails 6.0.3.4](http://railsinstaller.org/en) and [PostgreSQL](https://www.postgresql.org/download/).
+
+**Note:** You need to create a user(role) after you install PostgreSQL in order to user it on your local machine.
+
+### Setup
+
+Open your terminal, type `git clone https://github.com/martinnajjar12/members-only.git` and hit Enter to download this repository.
+
+### Install
+
+- At first, make sure that you have `bundler` installed on your machine. Again in your terminal type the command `bundler -v`. If a version showed up, skip the next step, if not please continue.
+- Type the command `gem install bundler` and hit Enter to install bundler on your machine.
+- Now you're ready to start! Type in your terminal `bundle install` to get the required dependencies to run this project.
+- At the end, run `yarn install --check-files` to install the additional important dependencies.
+- Last but not least, run `rails db:create` and `rails db:migrate` to setup your
+
+### Usage
+
+To use this project you should:
+
+- Inside your terminal run `rails server` to run the server.
+- Inside your browser type `localhost:3000` to view the home page.
+- You need to sign up in order to see the names of the authors and create a new secrets.
 
 ## Author 1
 
@@ -36,7 +55,7 @@
 
 - Github: [@githubhandle](https://github.com/Kingobaino1)
 - Twitter: [@twitterhandle](https://twitter.com/ibehkingso)
-- Linkedin: [linkedin](https://www.linkedin.com/in/kingsley-ibeh) 
+- Linkedin: [linkedin](https://www.linkedin.com/in/kingsley-ibeh)
 
 ## 🤝 Contributing
 
@@ -56,4 +75,4 @@ Give a ⭐️ if you like this project
 
 ## License
 
-This project is [MIT](LICENSE) licensed.
+This project is [MIT](https://github.com/martinnajjar12/members-only/blob/build-app/LICENSE) licensed.
