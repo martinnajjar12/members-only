@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  
+
   def index
     @posts = Post.all
   end
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-    flash[:notice] = "Secret created successfuly"
+      flash[:notice] = 'Secret created successfuly'
       redirect_to posts_path
     else
       render 'new'
