@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+    flash[:notice] = "Secret created successfuly"
       redirect_to posts_path
     else
       render 'new'
