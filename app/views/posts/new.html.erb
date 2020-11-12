@@ -1,4 +1,4 @@
-<div class='container d-flex justify-content-center align-items-center flex-column'>
+<div class='container h-100 d-flex justify-content-center align-items-center flex-column'>
   <h1 class='display-1 pb-4'>Post a new secret 🙊</h1>
   <%= simple_form_for(@post) do |f| %>
     <div class="form-group">
@@ -10,5 +10,6 @@
       <%= f.text_area :body, placeholder: 'Once upon a day....', class: 'form-control'%>
     </div>
     <%= f.button :submit, class: 'btn btn-primary'%>
+    <%= link_to 'Home Page', posts_path, class: 'btn btn-primary' %>
   <% end %>
 </div>

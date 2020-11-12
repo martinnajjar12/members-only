@@ -1,7 +1,29 @@
-<h1>List of all the posts</h1>
-<ul>
-<% @posts.each do |post|%>
-  <li>title: <%= post.title%></li>
-  <li>body: <%= post.body%></li>
-<% end %>
-</ul>
+<div class='container d-flex justify-content-center flex-column'>
+  <div class='mx-auto'>
+  <h1>List of all the posts</h1>
+  <% if user_signed_in? %>
+    <%= link_to 'Sign Out', destroy_user_session_path, method: 'delete', class: 'btn btn-danger mb-3' %>
+  <% else %>
+    <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-info mb-3' %>
+    <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary mb-3' %>
+  <% end %>
+
+  <% @posts.each do |post|%>
+    <div class="card" style="width: 18rem;">
+      <div class='card-header'>
+        <%= post.title %>
+      </div>
+      <div class="card-body">
+        <% if user_signed_in? %>
+          <h6 class="card-subtitle mb-2 text-muted"><strong>By <%= post.user.name %></strong></h6>
+        <% else %>
+          <h6 class="card-subtitle mb-2 text-muted"><strong>By Anonymous</strong></h6>
+        <% end %>
+        <p class="card-text"><%= post.body %></p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
