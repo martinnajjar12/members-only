@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'posts#index'
+  devise_for :users do
+    get "/login" => "devise/sessions#new"
+    delete "/login" => "devise/sessions#destroy"
+    get "/register" => "devise/registrations#new"
+  end
+  resources :posts, only: [:new, :create, :index]
 end
